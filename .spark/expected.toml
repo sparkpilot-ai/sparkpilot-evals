@@ -1,0 +1,149 @@
+# Expected findings for the TypeScript error handling eval scenario.
+# Used by the eval runner to verify the linter catches these issues.
+
+[[findings]]
+rule_id = "NO_HARDCODED_SECRETS"
+file = "src/config/database.ts"
+line = 3
+level = "error"
+description = "Hardcoded database password"
+
+[[findings]]
+rule_id = "NO_HARDCODED_SECRETS"
+file = "src/config/database.ts"
+line = 5
+level = "error"
+description = "Hardcoded Stripe API key"
+
+[[findings]]
+rule_id = "NO_HARDCODED_SECRETS"
+file = "src/services/authService.ts"
+line = 6
+level = "error"
+description = "Hardcoded JWT secret"
+
+[[findings]]
+rule_id = "SQL_INJECTION"
+file = "src/services/userService.ts"
+line = 8
+level = "error"
+description = "SQL injection in INSERT query"
+
+[[findings]]
+rule_id = "SQL_INJECTION"
+file = "src/services/userService.ts"
+line = 32
+level = "error"
+description = "SQL injection in UPDATE query"
+
+[[findings]]
+rule_id = "SQL_INJECTION"
+file = "src/services/userService.ts"
+line = 42
+level = "error"
+description = "SQL injection in search query"
+
+[[findings]]
+rule_id = "NO_SENSITIVE_LOGGING"
+file = "src/services/authService.ts"
+line = 12
+level = "error"
+description = "Logging user password"
+
+[[findings]]
+rule_id = "NO_SENSITIVE_LOGGING"
+file = "src/services/authService.ts"
+line = 48
+level = "error"
+description = "Logging password reset token"
+
+[[findings]]
+rule_id = "ASYNC_ERROR_HANDLING"
+file = "src/controllers/authController.ts"
+line = 5
+level = "warning"
+description = "Missing try/catch in login method"
+
+[[findings]]
+rule_id = "ASYNC_ERROR_HANDLING"
+file = "src/controllers/authController.ts"
+line = 15
+level = "warning"
+description = "Missing try/catch in resetPassword method"
+
+[[findings]]
+rule_id = "ASYNC_ERROR_HANDLING"
+file = "src/controllers/userController.ts"
+line = 6
+level = "warning"
+description = "Missing try/catch in createUser method"
+
+[[findings]]
+rule_id = "ASYNC_ERROR_HANDLING"
+file = "src/controllers/userController.ts"
+line = 12
+level = "warning"
+description = "Missing try/catch in getUser method"
+
+[[findings]]
+rule_id = "ASYNC_ERROR_HANDLING"
+file = "src/controllers/userController.ts"
+line = 24
+level = "warning"
+description = "Missing try/catch in searchUsers method"
+
+[[findings]]
+rule_id = "ASYNC_ERROR_HANDLING"
+file = "src/controllers/userController.ts"
+line = 30
+level = "warning"
+description = "Missing try/catch in updateUser method"
+
+[[findings]]
+rule_id = "ASYNC_ERROR_HANDLING"
+file = "src/controllers/userController.ts"
+line = 37
+level = "warning"
+description = "Missing try/catch in deleteUser method"
+
+[[findings]]
+rule_id = "ASYNC_ERROR_HANDLING"
+file = "src/middleware/auth.ts"
+line = 8
+level = "warning"
+description = "Missing try/catch in requireAuth middleware"
+
+[[findings]]
+rule_id = "FLOATING_PROMISES"
+file = "src/controllers/authController.ts"
+line = 17
+level = "warning"
+description = "Unawaited resetPassword call"
+
+[[findings]]
+rule_id = "FLOATING_PROMISES"
+file = "src/controllers/userController.ts"
+line = 39
+level = "warning"
+description = "Unawaited deleteUser call"
+
+[[findings]]
+rule_id = "FLOATING_PROMISES"
+file = "src/services/authService.ts"
+line = 43
+level = "warning"
+description = "Unawaited pool.query for reset token"
+
+[[findings]]
+rule_id = "FLOATING_PROMISES"
+file = "src/services/userService.ts"
+line = 14
+level = "warning"
+description = "Unawaited sendWelcomeEmail call"
+
+[[findings]]
+rule_id = "FLOATING_PROMISES"
+file = "src/services/userService.ts"
+line = 50
+level = "warning"
+description = "Unawaited DELETE query"
