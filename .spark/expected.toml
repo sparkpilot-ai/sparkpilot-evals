@@ -1,0 +1,168 @@
+# Expected findings for the Rust unwrap eval scenario.
+# Used by the eval runner to verify the linter catches these issues.
+
+# === NO_UNWRAP findings ===
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/build.rs"
+line = 31
+level = "warning"
+description = "String::from_utf8().unwrap() on command output"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/build.rs"
+line = 39
+level = "warning"
+description = "fs::metadata().unwrap() can panic"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/build.rs"
+line = 49
+level = "warning"
+description = "fs::remove_dir_all().unwrap() can panic"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/check.rs"
+line = 79
+level = "warning"
+description = "path.to_str().unwrap() can panic on non-UTF8"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/check.rs"
+line = 86
+level = "warning"
+description = "fs::read_dir().unwrap() can panic"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/check.rs"
+line = 88
+level = "warning"
+description = "entry.unwrap() in directory iteration"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/check.rs"
+line = 93
+level = "warning"
+description = "Chained unwraps on extension"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/init.rs"
+line = 18
+level = "warning"
+description = "fs::read_to_string().unwrap() on template"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/init.rs"
+line = 45
+level = "warning"
+description = "fs::create_dir_all().unwrap()"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/init.rs"
+line = 51
+level = "warning"
+description = "fs::read_to_string().expect() on template"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/commands/init.rs"
+line = 52
+level = "warning"
+description = "fs::write().expect() can panic"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/config.rs"
+line = 33
+level = "warning"
+description = "Chained unwraps on file read and TOML parse"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/config.rs"
+line = 37
+level = "warning"
+description = "find().unwrap() can panic if no match"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/config.rs"
+line = 46
+level = "error"
+description = "get().expect() on index can panic"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/utils/paths.rs"
+line = 5
+level = "warning"
+description = "env::current_dir().unwrap()"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/utils/paths.rs"
+line = 18
+level = "warning"
+description = "env::var().expect() on HOME"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/utils/paths.rs"
+line = 31
+level = "warning"
+description = "fs::create_dir_all().unwrap()"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/utils/paths.rs"
+line = 36
+level = "warning"
+description = "Chained unwraps on canonicalize and to_str"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/utils/process.rs"
+line = 33
+level = "warning"
+description = "String::from_utf8().unwrap() on stdout"
+
+[[findings]]
+rule_id = "NO_UNWRAP"
+file = "src/utils/process.rs"
+line = 37
+level = "warning"
+description = "String::from_utf8().unwrap() on stderr"
+
+# === PATH_HANDLING findings ===
+# These overlap with some NO_UNWRAP findings but are about path-specific issues
+
+[[findings]]
+rule_id = "PATH_HANDLING"
+file = "src/commands/check.rs"
+line = 79
+level = "warning"
+description = "path.to_str() assumes UTF-8 paths"
+
+[[findings]]
+rule_id = "PATH_HANDLING"
+file = "src/commands/check.rs"
+line = 93
+level = "warning"
+description = "extension().to_str() assumes UTF-8"
+
+[[findings]]
+rule_id = "PATH_HANDLING"
+file = "src/utils/paths.rs"
+line = 36
+level = "warning"
+description = "canonicalize().to_str() assumes UTF-8 paths"
